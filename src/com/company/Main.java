@@ -7,29 +7,37 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Please,");
-        Scanner sc = new Scanner(System.in);
-        double firstCount = sc.nextDouble();
+        while (true) {
+            System.out.println("Please, enter your first number");
+            Scanner sc = new Scanner(System.in);
+            double firstCount = sc.nextDouble();
 
-        System.out.println("What do you need to do?");
-        String symbol = sc.next();
+            System.out.println("What do you need to do?");
+            String symbol = sc.next();
+            if (symbol != "+" || symbol != "-" || symbol != "*" || symbol != "/" ) {
+                continue;
+            }
 
-        double secondNumber = sc.nextDouble();
+            System.out.println("Please, enter your second number");
+            double secondNumber = sc.nextDouble();
 
-
-        switch (symbol) {
-            case "+":
-                System.out.println(sum(firstCount, secondNumber));
-                break;
-            case "-":
-                System.out.println(subtract(firstCount, secondNumber));
-                break;
-            case "/":
-                System.out.println(divide(firstCount, secondNumber));
-                break;
-            case "*":
-                System.out.println(multiply(firstCount, secondNumber));
-                break;
+            switch (symbol) {
+                case "+":
+                    System.out.println(sum(firstCount, secondNumber));
+                    break;
+                case "-":
+                    System.out.println(subtract(firstCount, secondNumber));
+                    break;
+                case "/":
+                    System.out.println(divide(firstCount, secondNumber));
+                    break;
+                case "*":
+                    System.out.println(multiply(firstCount, secondNumber));
+                    break;
+                default:
+                    System.out.println("Your symbol is not correct");
+                    break;
+            }
         }
     }
 
